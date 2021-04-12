@@ -56,15 +56,39 @@
 		7CDEC53C2624CFBB008289EF /* iWeather */ = {
 			isa = PBXGroup;
 			children = (
+				7CDEC5552624D056008289EF /* Presenter */,
+				7CDEC5542624D051008289EF /* View */,
+				7CDEC5522624D03E008289EF /* Model */,
 				7CDEC53D2624CFBB008289EF /* AppDelegate.swift */,
 				7CDEC53F2624CFBB008289EF /* SceneDelegate.swift */,
 				7CDEC5412624CFBB008289EF /* ViewController.swift */,
-				7CDEC5432624CFBB008289EF /* Main.storyboard */,
 				7CDEC5462624CFBD008289EF /* Assets.xcassets */,
 				7CDEC5482624CFBD008289EF /* LaunchScreen.storyboard */,
 				7CDEC54B2624CFBD008289EF /* Info.plist */,
 			);
 			path = iWeather;
+			sourceTree = "<group>";
+		};
+		7CDEC5522624D03E008289EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CDEC5542624D051008289EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CDEC5432624CFBB008289EF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CDEC5552624D056008289EF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
