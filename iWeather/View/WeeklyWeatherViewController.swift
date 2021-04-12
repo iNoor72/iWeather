@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeeklyWeatherViewController.swift
 //  iWeather
 //
 //  Created by Noor Walid on 12/04/2021.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeeklyWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
-
 }
-

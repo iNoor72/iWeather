@@ -11,7 +11,7 @@
         <!--Today-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DailyWeatherViewController" customModule="iWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,12 +30,19 @@
                                 <rect key="frame" x="366" y="92" width="28" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="detectMyLocationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90K-hR-Efi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" id="nNi-U7-k0C"/>
+                    <connections>
+                        <outlet property="cityTextField" destination="Ok2-Bm-uvC" id="CHz-2H-ABH"/>
+                        <outlet property="weatherImage" destination="vIl-C0-8ha" id="fTR-3W-7Kk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +51,7 @@
         <!--Weekly-->
         <scene sceneID="cSr-8H-bF3">
             <objects>
-                <viewController id="Qc8-6J-uzA" sceneMemberID="viewController">
+                <viewController id="Qc8-6J-uzA" customClass="WeeklyWeatherViewController" customModule="iWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghb-tO-6AH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +70,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3dQ-Cx-glq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gcc-Rt-qgt">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
