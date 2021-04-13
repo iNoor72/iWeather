@@ -28,9 +28,9 @@ enum Router: URLRequestConvertible {
     var path: String {
         switch self {
         case .todayWeather:
-            return "/weather?"
+            return "/weather?&appid=\(Constants.API_Key)"
         case .weekWeather:
-            return "/forecast?"
+            return "/forecast?&appid=\(Constants.API_Key)"
         }
     }
     
