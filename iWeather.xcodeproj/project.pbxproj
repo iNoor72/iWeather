@@ -12,6 +12,7 @@
 		7C4532572624D8DF00CABB2B /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4532562624D8DF00CABB2B /* WeatherData.swift */; };
 		7C45325D2624DB1200CABB2B /* WeeklyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */; };
 		7CC6D74526277E6D001DB740 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6D74426277E6D001DB740 /* Presenter.swift */; };
+		7CC7521726284ED400D0862C /* MoyaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7521626284ED400D0862C /* MoyaRouter.swift */; };
 		7CDEC53E2624CFBB008289EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEC53D2624CFBB008289EF /* AppDelegate.swift */; };
 		7CDEC5402624CFBB008289EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEC53F2624CFBB008289EF /* SceneDelegate.swift */; };
 		7CDEC5422624CFBB008289EF /* DailyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEC5412624CFBB008289EF /* DailyWeatherViewController.swift */; };
@@ -27,6 +28,7 @@
 		7C4532562624D8DF00CABB2B /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherViewController.swift; sourceTree = "<group>"; };
 		7CC6D74426277E6D001DB740 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		7CC7521626284ED400D0862C /* MoyaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaRouter.swift; sourceTree = "<group>"; };
 		7CDEC53A2624CFBB008289EF /* iWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CDEC53D2624CFBB008289EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CDEC53F2624CFBB008289EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				7C3954DB2624D14600D9742C /* Constants.swift */,
 				7C4532532624D71800CABB2B /* Router.swift */,
+				7CC7521626284ED400D0862C /* MoyaRouter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				7CDEC5422624CFBB008289EF /* DailyWeatherViewController.swift in Sources */,
 				7CDEC53E2624CFBB008289EF /* AppDelegate.swift in Sources */,
 				7CC6D74526277E6D001DB740 /* Presenter.swift in Sources */,
+				7CC7521726284ED400D0862C /* MoyaRouter.swift in Sources */,
 				7C4532542624D71800CABB2B /* Router.swift in Sources */,
 				7C45325D2624DB1200CABB2B /* WeeklyWeatherViewController.swift in Sources */,
 				7CDEC5402624CFBB008289EF /* SceneDelegate.swift in Sources */,

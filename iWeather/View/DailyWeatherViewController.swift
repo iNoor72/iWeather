@@ -27,7 +27,7 @@ class DailyWeatherViewController: UIViewController, WeatherPresenterDelegate {
 
     @IBAction func detectMyLocationTapped(_ sender: UIButton) {
         //Do some functions to detect my location
-        //Login goes here
+        //Login goes hereq
         
         let detectedCityName = ""
         cityName = detectedCityName
