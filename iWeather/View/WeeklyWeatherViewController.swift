@@ -7,25 +7,22 @@
 
 import UIKit
 
-class WeeklyWeatherViewController: UIViewController, WeatherPresenterDelegate {
+class WeeklyWeatherViewController: UIViewController, WeeklyWeatherPresenterDelegate {
 
-    let weeklyPresenter = Presenter()
+    let weeklyPresenter = WeeklyWeatherPresenter()
     override func viewDidLoad() {
         super.viewDidLoad()
-        weeklyPresenter.delegate = self
+        weeklyPresenter.weeklyDelegate = self
+        weeklyPresenter.getWeeklyWeather(for: "")
     }
     
-    func getDailyWeather() {
-        
-    }
-    
-    func getWeeklyWeather() {
+    func presentWeeklyWeather() {
         
     }
     
     //Will be deleted later and put into the Presenter instead
     func fetchWeather(cityName: String) {
-        let url = ("\(Router.todayWeather)"+"q=\(cityName)")
+        let url = ("\(Router.weeklyWeather)"+"q=\(cityName)")
     }
 
 }

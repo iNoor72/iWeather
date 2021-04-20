@@ -13,14 +13,14 @@ enum Router: URLRequestConvertible {
     static let baseURL = "api.openweathermap.org/data/2.5"
     
     case todayWeather
-    case weekWeather
+    case weeklyWeather
     
     var method: HTTPMethod {
         switch self {
         case .todayWeather:
             return .get
             
-        case .weekWeather:
+        case .weeklyWeather:
             return .get
         }
     }
@@ -29,7 +29,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .todayWeather:
             return "/weather?&appid=\(Constants.API_Key)"
-        case .weekWeather:
+        case .weeklyWeather:
             return "/forecast?&appid=\(Constants.API_Key)"
         }
     }
