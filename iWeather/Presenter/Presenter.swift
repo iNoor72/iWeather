@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import CoreLocation
 
 protocol DailyWeatherPresenterDelegate {
     func presentDailyWeather()
@@ -23,8 +24,10 @@ typealias WeeklyPresenterDelegate = UIViewController & WeeklyWeatherPresenterDel
 class DailyWeatherPresenter {
     weak var dailyDelegate: DailyPresenteDelegate?
     
+    //Check the calling url
+    
     func getDailyWeather(for city: String){
-        let url = Router.todayWeather
+        let url = Router.todayWeather.path + "q=\(city)"
         AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeatherData, AFError>)) in
             switch response.result {
             case .success(let data):
@@ -36,6 +39,21 @@ class DailyWeatherPresenter {
             }
         }
     }
+    
+    func getDailyWeather(longitude : CLLocationDegrees, latitude: CLLocationDegrees) {
+        let url = Router.todayWeather.path + "lat=\(longitude)" + "&long\(latitude)"
+        AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeatherData, AFError>)) in
+            switch response.result {
+            case .success(let data):
+                print("Data succesfully fetched. \(data)")
+                self?.dailyDelegate?.presentDailyWeather()
+                
+            case .failure(let error):
+                print("There was a problem fetching data. \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }
 
 class WeeklyWeatherPresenter {
@@ -55,6 +73,4 @@ class WeeklyWeatherPresenter {
         }
         
     }
-    
-    
 }

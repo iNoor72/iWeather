@@ -10,7 +10,7 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    static let baseURL = "api.openweathermap.org/data/2.5"
+    static let baseURL = "https://api.openweathermap.org/data/2.5"
     
     case todayWeather
     case weeklyWeather
@@ -28,9 +28,9 @@ enum Router: URLRequestConvertible {
     var path: String {
         switch self {
         case .todayWeather:
-            return "/weather?&appid=\(Constants.API_Key)"
+            return "/weather?&appid=\(Constants.API_Key)&"
         case .weeklyWeather:
-            return "/forecast?&appid=\(Constants.API_Key)"
+            return "/forecast?&appid=\(Constants.API_Key)&"
         }
     }
     

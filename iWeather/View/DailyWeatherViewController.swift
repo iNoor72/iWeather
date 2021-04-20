@@ -30,28 +30,34 @@ class DailyWeatherViewController: UIViewController, DailyWeatherPresenterDelegat
     }
 
     @IBAction func detectMyLocationTapped(_ sender: UIButton) {
-        //Do some functions to detect my location
-        //Login goes here
-        
-        locationManager(self.locationManager, didUpdateLocations: [CLLocation]())
+        locationManager.requestLocation()
     }
     
     func presentDailyWeather() {
-        
+        cityTextField.text = cityName ?? "No city detected."
+        weatherImage.image = UIImage(systemName: "")
     }
     
     //Will be deleted later and put into the Presenter instead
     func fetchWeather(cityName: String) {
         let url = ("\(Router.todayWeather)"+"q=\(cityName)")
+        
     }
 }
 
 extension DailyWeatherViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let detectedCityName = ""
-        cityName = detectedCityName
-        dailyPresenter.getDailyWeather(for: "")
+        if let detectedCityName = locations.last{
+            locationManager.stopUpdatingLocation()
+            print(detectedCityName.coordinate.longitude)
+            print(detectedCityName.coordinate.latitude)
+            dailyPresenter.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error happened while getting location. Error: \(error.localizedDescription)")
     }
 }
 

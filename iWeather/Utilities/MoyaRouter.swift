@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum MoyaRouter {
-    static let baseURL = "api.openweathermap.org/data/2.5"
+    static let baseURL = "https://api.openweathermap.org/data/2.5"
     
     case dailyWeather
     case weeklyWeather
