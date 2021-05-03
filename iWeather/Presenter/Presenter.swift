@@ -31,10 +31,8 @@ class DailyWeatherPresenter: DailyWeatherPresenterDelegate {
         self.dailyDelegate = delegate
     }
     
-    //Check the calling url
-    
     func getDailyWeather(for city: String){
-        let url = Router.todayWeather.path + "q=\(city)"
+        let url = Router.baseURL + Router.todayWeather.path + "q=\(city)"
         AF.request(url).responseDecodable {[weak self] (response: (DataResponse<WeatherData, AFError>)) in
             switch response.result {
             case .success(let data):
@@ -75,7 +73,7 @@ class WeeklyWeatherPresenter: WeeklyWeatherPresenterDelegate {
     }
     
     func getWeeklyWeather(for city: String){
-        let url = Router.weeklyWeather
+        let url = Router.baseURL + Router.weeklyWeather.path + "q=\(city)"
         AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeatherData, AFError>)) in
             switch response.result {
             case .success(let data):

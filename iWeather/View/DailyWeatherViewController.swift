@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol DailyViewDataProtocol: AnyObject {
     var weatherData: WeatherData? {get set}
-    func fetchWeather(cityName: String)
+    //func fetchWeather(cityName: String)
     func presentDailyWeather()
 }
 
@@ -19,9 +19,10 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var degreeLabel: UILabel!
     
     var dailyPresenter : DailyWeatherPresenterDelegate?
-    var cityName: String?
+    var cityName: String? = "Cairo"
     let locationManager = CLLocationManager()
     var weatherData: WeatherData?
     
@@ -31,7 +32,7 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
         dailyPresenter = DailyWeatherPresenter(delegate: self)
         
         //Get weather for the saved city from UserDefaults for example
-        dailyPresenter?.getDailyWeather(for: "")
+        dailyPresenter?.getDailyWeather(for: "cairo")
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -44,18 +45,30 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
     
     //MARK:- ViewProtocol Functions
     
-    func presentDailyWeather() {
-        cityTextField.text = cityName ?? "No city detected."
-        weatherImage.image = UIImage(systemName: "\(weatherData?.weather[0].weatherDescription)")
+    func weatherImage(status: String) -> String {
+        switch status {
+        case "clear":
+            return "sun.min.fill"
+        case "rain":
+            return "cloud.rain.fill"
+        case "cloudy":
+            return "cloud.fill"
+        default:
+            return "sun.min.fill"
+        }
     }
     
-    //Will be deleted later and put into the Presenter instead
-    func fetchWeather(cityName: String) {
-        dailyPresenter?.getDailyWeather(for: cityName)
-        let url = ("\(Router.todayWeather)"+"q=\(cityName)")
+    func presentDailyWeather() {
+        cityTextField.text = cityName ?? "No city detected."
         
+        
+        weatherImage.image = UIImage(systemName: weatherImage(status: weatherData?.weather[0].main ?? "sun"))
+//        weatherImage.image = UIImage(systemName: "sun.min.fill")
+        degreeLabel.text = "\(weatherData?.main.temp ?? 0)"
     }
 }
+
+//MARK:- CoreLocation Functions
 
 extension DailyWeatherViewController: CLLocationManagerDelegate {
     

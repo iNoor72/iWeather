@@ -10,7 +10,7 @@ import CoreLocation
 
 protocol WeeklyViewDataProtocol: AnyObject {
     var weatherData: WeatherData? {get set}
-    func fetchWeather(cityName: String)
+    //func fetchWeather(cityName: String)
     func presentWeeklyWeather()
 }
 
@@ -21,15 +21,10 @@ class WeeklyWeatherViewController: UIViewController, WeeklyViewDataProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         weeklyPresenter = WeeklyWeatherPresenter(weeklyDelegate: self)
+        weeklyPresenter?.getWeeklyWeather(for: "Cairo")
     }
     
     func presentWeeklyWeather() {
         
     }
-    
-    //Will be deleted later and put into the Presenter instead
-    func fetchWeather(cityName: String) {
-        let url = ("\(Router.weeklyWeather)"+"q=\(cityName)")
-    }
-
 }
