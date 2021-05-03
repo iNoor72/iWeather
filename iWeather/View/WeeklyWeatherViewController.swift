@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeeklyWeatherViewController: UIViewController, WeeklyWeatherPresenterDelegate {
+protocol WeeklyViewDataProtocol: AnyObject {
+    var weatherData: WeatherData? {get set}
+    func fetchWeather(cityName: String)
+    func presentWeeklyWeather()
+}
 
-    let weeklyPresenter = WeeklyWeatherPresenter()
+class WeeklyWeatherViewController: UIViewController, WeeklyViewDataProtocol {
+    var weeklyPresenter : WeeklyWeatherPresenterDelegate?
+    var weatherData: WeatherData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        weeklyPresenter.weeklyDelegate = self
-        weeklyPresenter.getWeeklyWeather(for: "")
+        weeklyPresenter = WeeklyWeatherPresenter(weeklyDelegate: self)
     }
     
     func presentWeeklyWeather() {

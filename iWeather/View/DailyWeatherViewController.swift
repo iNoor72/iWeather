@@ -9,20 +9,29 @@ import UIKit
 import Alamofire
 import CoreLocation
 
-class DailyWeatherViewController: UIViewController, DailyWeatherPresenterDelegate {
+protocol DailyViewDataProtocol: AnyObject {
+    var weatherData: WeatherData? {get set}
+    func fetchWeather(cityName: String)
+    func presentDailyWeather()
+}
+
+class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var weatherImage: UIImageView!
     
-    let dailyPresenter = DailyWeatherPresenter()
+    var dailyPresenter : DailyWeatherPresenterDelegate?
     var cityName: String?
     let locationManager = CLLocationManager()
+    var weatherData: WeatherData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        dailyPresenter.dailyDelegate = self
-        dailyPresenter.getDailyWeather(for: "")
+        dailyPresenter = DailyWeatherPresenter(delegate: self)
+        
+        //Get weather for the saved city from UserDefaults for example
+        dailyPresenter?.getDailyWeather(for: "")
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -33,13 +42,16 @@ class DailyWeatherViewController: UIViewController, DailyWeatherPresenterDelegat
         locationManager.requestLocation()
     }
     
+    //MARK:- ViewProtocol Functions
+    
     func presentDailyWeather() {
         cityTextField.text = cityName ?? "No city detected."
-        weatherImage.image = UIImage(systemName: "")
+        weatherImage.image = UIImage(systemName: "\(weatherData?.weather[0].weatherDescription)")
     }
     
     //Will be deleted later and put into the Presenter instead
     func fetchWeather(cityName: String) {
+        dailyPresenter?.getDailyWeather(for: cityName)
         let url = ("\(Router.todayWeather)"+"q=\(cityName)")
         
     }
@@ -52,7 +64,7 @@ extension DailyWeatherViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             print(detectedCityName.coordinate.longitude)
             print(detectedCityName.coordinate.latitude)
-            dailyPresenter.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
+            dailyPresenter?.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
         }
     }
     

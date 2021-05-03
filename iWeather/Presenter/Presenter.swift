@@ -11,28 +11,38 @@ import Alamofire
 import CoreLocation
 
 protocol DailyWeatherPresenterDelegate {
-    func presentDailyWeather()
+    func getDailyWeather(for city: String)
+    func getDailyWeather(longitude : CLLocationDegrees, latitude: CLLocationDegrees)
 }
 
 protocol WeeklyWeatherPresenterDelegate {
-    func presentWeeklyWeather()
+    func getWeeklyWeather(for city: String)
+    func getWeeklyWeather(longitude : CLLocationDegrees, latitude: CLLocationDegrees)
 }
 
-typealias DailyPresenteDelegate = UIViewController & DailyWeatherPresenterDelegate
-typealias WeeklyPresenterDelegate = UIViewController & WeeklyWeatherPresenterDelegate
+//typealias DailyPresenteDelegate = UIViewController & DailyWeatherPresenterDelegate
+//typealias WeeklyPresenterDelegate = UIViewController & WeeklyWeatherPresenterDelegate
 
-class DailyWeatherPresenter {
-    weak var dailyDelegate: DailyPresenteDelegate?
+class DailyWeatherPresenter: DailyWeatherPresenterDelegate {
+    
+    weak var dailyDelegate: DailyViewDataProtocol?
+    
+    init(delegate: DailyViewDataProtocol) {
+        self.dailyDelegate = delegate
+    }
     
     //Check the calling url
     
     func getDailyWeather(for city: String){
         let url = Router.todayWeather.path + "q=\(city)"
-        AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeatherData, AFError>)) in
+        AF.request(url).responseDecodable {[weak self] (response: (DataResponse<WeatherData, AFError>)) in
             switch response.result {
             case .success(let data):
                 print("Data succesfully fetched. \(data)")
+                
+                self?.dailyDelegate?.weatherData = data
                 self?.dailyDelegate?.presentDailyWeather()
+                
                 
             case .failure(let error):
                 print("There was a problem fetching data. \(error.localizedDescription)")
@@ -46,6 +56,7 @@ class DailyWeatherPresenter {
             switch response.result {
             case .success(let data):
                 print("Data succesfully fetched. \(data)")
+                self?.dailyDelegate?.weatherData = data
                 self?.dailyDelegate?.presentDailyWeather()
                 
             case .failure(let error):
@@ -56,8 +67,12 @@ class DailyWeatherPresenter {
     
 }
 
-class WeeklyWeatherPresenter {
-    weak var weeklyDelegate: WeeklyPresenterDelegate?
+class WeeklyWeatherPresenter: WeeklyWeatherPresenterDelegate {
+    weak var weeklyDelegate: WeeklyViewDataProtocol?
+    
+    init(weeklyDelegate: WeeklyViewDataProtocol) {
+        self.weeklyDelegate = weeklyDelegate
+    }
     
     func getWeeklyWeather(for city: String){
         let url = Router.weeklyWeather
@@ -65,6 +80,7 @@ class WeeklyWeatherPresenter {
             switch response.result {
             case .success(let data):
                 print("Data succesfully fetched. \(data)")
+                self?.weeklyDelegate?.weatherData = data
                 self?.weeklyDelegate?.presentWeeklyWeather()
                 
             case .failure(let error):
@@ -73,4 +89,10 @@ class WeeklyWeatherPresenter {
         }
         
     }
+    
+    func getWeeklyWeather(longitude: CLLocationDegrees, latitude: CLLocationDegrees) {
+        
+    }
+    
+    
 }
