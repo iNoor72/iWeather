@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-C0-8ha">
-                                <rect key="frame" x="30" y="180.5" width="354" height="215"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-C0-8ha">
+                                <rect key="frame" x="30" y="178" width="354" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="OdV-oI-xJH"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Country Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-Bm-uvC">
-                                <rect key="frame" x="20" y="84" width="354" height="34"/>
+                                <rect key="frame" x="20" y="84" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -47,11 +47,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vIl-C0-8ha" secondAttribute="trailing" constant="30" id="Lvl-wF-k4G"/>
                             <constraint firstItem="8rl-jC-hUS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mko-Mg-miF"/>
                             <constraint firstItem="8rl-jC-hUS" firstAttribute="top" secondItem="vIl-C0-8ha" secondAttribute="bottom" constant="32" id="o8G-h1-V5U"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ok2-Bm-uvC" secondAttribute="trailing" constant="40" id="yrj-1i-QPB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ok2-Bm-uvC" secondAttribute="trailing" constant="20" id="yrj-1i-QPB"/>
                             <constraint firstItem="vIl-C0-8ha" firstAttribute="top" secondItem="Ok2-Bm-uvC" secondAttribute="bottom" constant="60" id="zFI-kX-YjJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" id="nNi-U7-k0C"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="sun.max.fill" catalog="system" id="nNi-U7-k0C"/>
                     <connections>
                         <outlet property="cityTextField" destination="Ok2-Bm-uvC" id="CHz-2H-ABH"/>
                         <outlet property="degreeLabel" destination="8rl-jC-hUS" id="m8c-M4-hBN"/>
@@ -69,14 +69,55 @@
                     <view key="view" contentMode="scaleToFill" id="ghb-tO-6AH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Country Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBW-wh-xSY">
+                                <rect key="frame" x="20" y="84" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy6-sK-OqE">
+                                <rect key="frame" x="20" y="182" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OYw-Sl-fgR">
+                                <rect key="frame" x="8" y="243" width="398" height="538"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jCa-P0-h0V">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EBR-fY-cfj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IBW-wh-xSY" firstAttribute="top" secondItem="EBR-fY-cfj" secondAttribute="top" constant="40" id="1vc-fK-0Cg"/>
+                            <constraint firstItem="EBR-fY-cfj" firstAttribute="trailing" secondItem="OYw-Sl-fgR" secondAttribute="trailing" constant="8" id="6FM-Uv-U22"/>
+                            <constraint firstItem="EBR-fY-cfj" firstAttribute="bottom" secondItem="OYw-Sl-fgR" secondAttribute="bottom" constant="32" id="Ana-HX-eBy"/>
+                            <constraint firstItem="oy6-sK-OqE" firstAttribute="leading" secondItem="EBR-fY-cfj" secondAttribute="leading" constant="20" id="JBf-CK-N5A"/>
+                            <constraint firstItem="oy6-sK-OqE" firstAttribute="top" secondItem="IBW-wh-xSY" secondAttribute="bottom" constant="64" id="Ktx-d7-0zQ"/>
+                            <constraint firstItem="EBR-fY-cfj" firstAttribute="trailing" secondItem="oy6-sK-OqE" secondAttribute="trailing" constant="20" id="Vvv-6W-0BD"/>
+                            <constraint firstItem="OYw-Sl-fgR" firstAttribute="leading" secondItem="EBR-fY-cfj" secondAttribute="leading" constant="8" id="YNq-fI-nIO"/>
+                            <constraint firstItem="OYw-Sl-fgR" firstAttribute="top" secondItem="oy6-sK-OqE" secondAttribute="bottom" constant="40" id="cYX-Sh-szE"/>
+                            <constraint firstItem="IBW-wh-xSY" firstAttribute="leading" secondItem="EBR-fY-cfj" secondAttribute="leading" constant="20" id="ixL-l5-GUf"/>
+                            <constraint firstItem="EBR-fY-cfj" firstAttribute="trailing" secondItem="IBW-wh-xSY" secondAttribute="trailing" constant="20" id="vCG-sX-iVC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weekly" image="calendar" catalog="system" id="eXc-yV-rQT"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="oy6-sK-OqE" id="Lyw-jd-AEO"/>
+                        <outlet property="citySearchBar" destination="IBW-wh-xSY" id="qN6-xq-ywr"/>
+                        <outlet property="collectionView" destination="OYw-Sl-fgR" id="evw-gf-5x5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nl-c7-jFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="498"/>
+            <point key="canvasLocation" x="1098.5507246376812" y="497.54464285714283"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="myM-5C-X2h">
@@ -100,7 +141,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

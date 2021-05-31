@@ -26,13 +26,14 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
     let locationManager = CLLocationManager()
     var weatherData: WeatherData?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         dailyPresenter = DailyWeatherPresenter(delegate: self)
         
-        //Get weather for the saved city from UserDefaults for example
-        dailyPresenter?.getDailyWeather(for: "cairo")
+        //Need to save city in UserDefaults in AppDelegate and fetch it here, becuase this is not working for now
+        dailyPresenter?.getDailyWeather(for: UserDefaults.standard.string(forKey: "CurrentWeather") ?? "Cairo")
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()

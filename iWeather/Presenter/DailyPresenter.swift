@@ -15,13 +15,7 @@ protocol DailyWeatherPresenterDelegate {
     func getDailyWeather(longitude : CLLocationDegrees, latitude: CLLocationDegrees)
 }
 
-protocol WeeklyWeatherPresenterDelegate {
-    func getWeeklyWeather(for city: String)
-    func getWeeklyWeather(longitude : CLLocationDegrees, latitude: CLLocationDegrees)
-}
-
 //typealias DailyPresenteDelegate = UIViewController & DailyWeatherPresenterDelegate
-//typealias WeeklyPresenterDelegate = UIViewController & WeeklyWeatherPresenterDelegate
 
 class DailyWeatherPresenter: DailyWeatherPresenterDelegate {
     
@@ -62,35 +56,5 @@ class DailyWeatherPresenter: DailyWeatherPresenterDelegate {
             }
         }
     }
-    
-}
-
-class WeeklyWeatherPresenter: WeeklyWeatherPresenterDelegate {
-    weak var weeklyDelegate: WeeklyViewDataProtocol?
-    
-    init(weeklyDelegate: WeeklyViewDataProtocol) {
-        self.weeklyDelegate = weeklyDelegate
-    }
-    
-    func getWeeklyWeather(for city: String){
-        let url = Router.baseURL + Router.weeklyWeather.path + "q=\(city)"
-        AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeatherData, AFError>)) in
-            switch response.result {
-            case .success(let data):
-                print("Data succesfully fetched. \(data)")
-                self?.weeklyDelegate?.weatherData = data
-                self?.weeklyDelegate?.presentWeeklyWeather()
-                
-            case .failure(let error):
-                print("There was a problem fetching data. \(error.localizedDescription)")
-            }
-        }
-        
-    }
-    
-    func getWeeklyWeather(longitude: CLLocationDegrees, latitude: CLLocationDegrees) {
-        
-    }
-    
     
 }

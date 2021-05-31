@@ -30,7 +30,7 @@ enum Router: URLRequestConvertible {
         case .todayWeather:
             return "/weather?&appid=\(Constants.API_Key)&units=metric&"
         case .weeklyWeather:
-            return "/forecast?&appid=\(Constants.API_Key)&units=metric"
+            return "/forecast?&appid=\(Constants.API_Key)&units=metric&"
         }
     }
     
