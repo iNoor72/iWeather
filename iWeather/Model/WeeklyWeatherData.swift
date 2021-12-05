@@ -9,6 +9,12 @@ import Foundation
 
 struct WeeklyWeatherData: Codable {
     var list : [WeatherElements]
+    var date : String
+    
+    enum CodingKeys: String, CodingKey {
+        case list
+        case date = "dt_txt"
+    }
 }
 
 struct WeatherElements: Codable {

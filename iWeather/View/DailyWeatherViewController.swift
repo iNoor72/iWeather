@@ -11,7 +11,6 @@ import CoreLocation
 
 protocol DailyViewDataProtocol: AnyObject {
     var weatherData: WeatherData? {get set}
-    //func fetchWeather(cityName: String)
     func presentDailyWeather()
 }
 
@@ -40,50 +39,16 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
         
     }
 
-    @IBAction func detectMyLocationTapped(_ sender: UIButton) {
-        locationManager.requestLocation()
+    @IBAction func fetchButtonPressed(_ sender: UIButton) {
+        guard let cityName = cityTextField.text else { return }
+        dailyPresenter?.getDailyWeather(for: cityName)
     }
     
-    //MARK:- ViewProtocol Functions
-    
-    func weatherImage(status: String) -> String {
-        switch status {
-        case "clear":
-            return "sun.min.fill"
-        case "rain":
-            return "cloud.rain.fill"
-        case "cloudy":
-            return "cloud.fill"
-        default:
-            return "sun.min.fill"
-        }
-    }
-    
+    //MARK: ViewProtocol Functions
     func presentDailyWeather() {
         cityTextField.text = cityName ?? "No city detected."
-        
-        
-        weatherImage.image = UIImage(systemName: weatherImage(status: weatherData?.weather[0].main ?? "sun"))
-//        weatherImage.image = UIImage(systemName: "sun.min.fill")
+        guard let image = dailyPresenter?.weatherImage(status: weatherData?.weather[0].main ?? "sun") else { return }
+        weatherImage.image = UIImage(systemName: image)
         degreeLabel.text = "\(weatherData?.main.temp ?? 0)"
     }
 }
-
-//MARK:- CoreLocation Functions
-
-extension DailyWeatherViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let detectedCityName = locations.last{
-            locationManager.stopUpdatingLocation()
-            print(detectedCityName.coordinate.longitude)
-            print(detectedCityName.coordinate.latitude)
-            dailyPresenter?.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error happened while getting location. Error: \(error.localizedDescription)")
-    }
-}
-

@@ -12,32 +12,46 @@ enum Router: URLRequestConvertible {
     
     static let baseURL = "https://api.openweathermap.org/data/2.5"
     
-    case todayWeather
-    case weeklyWeather
+    case todayWeather(city: String)
+    case weeklyWeather(city: String)
     
     var method: HTTPMethod {
         switch self {
-        case .todayWeather:
+        case .todayWeather(_):
             return .get
             
-        case .weeklyWeather:
+        case .weeklyWeather(_):
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .todayWeather:
-            return "/weather?&appid=\(Constants.API_Key)&units=metric&"
-        case .weeklyWeather:
-            return "/forecast?&appid=\(Constants.API_Key)&units=metric&"
+        case .todayWeather(_):
+            return "/weather?appid=\(Constants.API_Key)"
+        case .weeklyWeather(_):
+            return "/forecast?appid=\(Constants.API_Key)"
+        }
+    }
+    
+    var parameters: [String:Any]? {
+        switch self {
+        case .todayWeather(let city):
+            return ["q":city]
+        case .weeklyWeather(let city):
+            return ["q":city]
         }
     }
     
     func asURLRequest() throws -> URLRequest {
         let url = URL(string: Router.baseURL)
-        let request = URLRequest(url: (url!.appendingPathComponent(path)))
-
+        var request = URLRequest(url: (url!.appendingPathComponent(path)))
+        switch self {
+        case .weeklyWeather(city: _):
+            request = try URLEncoding.default.encode(request, with: parameters)
+        case .todayWeather(city: _):
+            request = try URLEncoding.default.encode(request, with: parameters)
+        }
         return request
         
     }
