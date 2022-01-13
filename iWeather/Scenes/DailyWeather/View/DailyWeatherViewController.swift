@@ -44,6 +44,10 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
         dailyPresenter?.getDailyWeather(for: cityName)
     }
     
+    @objc func getMyLocation() {
+        
+    }
+    
     //MARK: ViewProtocol Functions
     func presentDailyWeather() {
         cityTextField.text = cityName ?? "No city detected."

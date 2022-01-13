@@ -102,13 +102,82 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		7C8C494F275D22C200E32BD9 /* Extenstions */ = {
+		7CA34223278FAA1800E67A2D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7CA34226278FAA2F00E67A2D /* WeeklyWeather */,
+				7CA34225278FAA2800E67A2D /* DailyWeather */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7CA34225278FAA2800E67A2D /* DailyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				7CA34228278FAA3800E67A2D /* Presenter */,
+				7CA34227278FAA3500E67A2D /* View */,
+			);
+			path = DailyWeather;
+			sourceTree = "<group>";
+		};
+		7CA34226278FAA2F00E67A2D /* WeeklyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				7CA3422C278FAA6B00E67A2D /* Extensions */,
+				7CA3422A278FAA4600E67A2D /* Presenter */,
+				7CA34229278FAA4300E67A2D /* View */,
+			);
+			path = WeeklyWeather;
+			sourceTree = "<group>";
+		};
+		7CA34227278FAA3500E67A2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CA3422B278FAA6300E67A2D /* Extensions */,
+				7CDEC5412624CFBB008289EF /* DailyWeatherViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CA34228278FAA3800E67A2D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7CC6D74426277E6D001DB740 /* DailyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7CA34229278FAA4300E67A2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */,
+				7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CA3422A278FAA4600E67A2D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7C786A462665226E00117339 /* WeeklyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7CA3422B278FAA6300E67A2D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C8C4952275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CA3422C278FAA6B00E67A2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				7C8C4950275D22D200E32BD9 /* WeeklyWeatherViewController+Extensions.swift */,
-				7C8C4952275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift */,
 			);
-			path = Extenstions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7CDEC5312624CFBB008289EF = {
@@ -132,11 +201,9 @@
 		7CDEC53C2624CFBB008289EF /* iWeather */ = {
 			isa = PBXGroup;
 			children = (
-				7C8C494F275D22C200E32BD9 /* Extenstions */,
-				7C8C494E275D1C8C00E32BD9 /* Storyboards */,
 				7C8C494D275D1C2B00E32BD9 /* Utilities */,
-				7CDEC5552624D056008289EF /* Presenter */,
-				7CDEC5542624D051008289EF /* View */,
+				7CA34223278FAA1800E67A2D /* Scenes */,
+				7C8C494E275D1C8C00E32BD9 /* Storyboards */,
 				7CDEC5522624D03E008289EF /* Model */,
 				7C3954DA2624D13A00D9742C /* Services */,
 				7CDEC53D2624CFBB008289EF /* AppDelegate.swift */,
@@ -154,25 +221,6 @@
 				7C786A492665240200117339 /* WeeklyWeatherData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		7CDEC5542624D051008289EF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7CDEC5412624CFBB008289EF /* DailyWeatherViewController.swift */,
-				7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */,
-				7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7CDEC5552624D056008289EF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7CC6D74426277E6D001DB740 /* DailyPresenter.swift */,
-				7C786A462665226E00117339 /* WeeklyPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		E0A5106783F8E15D14D80BB0 /* Frameworks */ = {
