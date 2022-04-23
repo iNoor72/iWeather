@@ -30,7 +30,7 @@ class WeeklyPresenter: WeeklyWeatherPresenterDelegate {
     }
     
     func getWeeklyWeather(for city: String){
-        let url = Router.weeklyWeather(city: city)
+        let url = WeeklyWeatherAlamofireEndpoints.weeklyWeather(city: city)
         AF.request(url).responseDecodable {[weak self](response: (DataResponse<WeeklyWeatherData, AFError>)) in
             switch response.result {
             case .success(let data):
