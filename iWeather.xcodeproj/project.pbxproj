@@ -8,15 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		7C3954DC2624D14600D9742C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3954DB2624D14600D9742C /* Constants.swift */; };
-		7C4532542624D71800CABB2B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4532532624D71800CABB2B /* Router.swift */; };
 		7C4532572624D8DF00CABB2B /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4532562624D8DF00CABB2B /* WeatherData.swift */; };
 		7C45325D2624DB1200CABB2B /* WeeklyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */; };
+		7C62166B281482E200D05171 /* AlamofireEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62166A281482E200D05171 /* AlamofireEndpoint.swift */; };
+		7C62166E2814847600D05171 /* DailyWeatherAlamofireEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62166D2814847600D05171 /* DailyWeatherAlamofireEndpoints.swift */; };
+		7C6216702814856C00D05171 /* WeeklyWeatherAlamofireEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62166F2814856C00D05171 /* WeeklyWeatherAlamofireEndpoints.swift */; };
+		7C6216722814862300D05171 /* MoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216712814862300D05171 /* MoyaEndpoints.swift */; };
+		7C6216742814868300D05171 /* DailyWeatherMoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216732814868300D05171 /* DailyWeatherMoyaEndpoints.swift */; };
+		7C6216762814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216752814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift */; };
 		7C786A472665226E00117339 /* WeeklyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A462665226E00117339 /* WeeklyPresenter.swift */; };
 		7C786A4A2665240200117339 /* WeeklyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A492665240200117339 /* WeeklyWeatherData.swift */; };
 		7C786A4E2665270200117339 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */; };
 		7C786A4F2665270200117339 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C786A4D2665270200117339 /* WeatherCollectionViewCell.xib */; };
 		7C8C4951275D22D200E32BD9 /* WeeklyWeatherViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C4950275D22D200E32BD9 /* WeeklyWeatherViewController+Extensions.swift */; };
-		7C8C4953275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C4952275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift */; };
 		7CC6D74526277E6D001DB740 /* DailyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6D74426277E6D001DB740 /* DailyPresenter.swift */; };
 		7CC7521726284ED400D0862C /* MoyaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7521626284ED400D0862C /* MoyaRouter.swift */; };
 		7CDEC53E2624CFBB008289EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEC53D2624CFBB008289EF /* AppDelegate.swift */; };
@@ -30,15 +34,19 @@
 
 /* Begin PBXFileReference section */
 		7C3954DB2624D14600D9742C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7C4532532624D71800CABB2B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7C4532562624D8DF00CABB2B /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		7C45325C2624DB1200CABB2B /* WeeklyWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherViewController.swift; sourceTree = "<group>"; };
+		7C62166A281482E200D05171 /* AlamofireEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireEndpoint.swift; sourceTree = "<group>"; };
+		7C62166D2814847600D05171 /* DailyWeatherAlamofireEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherAlamofireEndpoints.swift; sourceTree = "<group>"; };
+		7C62166F2814856C00D05171 /* WeeklyWeatherAlamofireEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherAlamofireEndpoints.swift; sourceTree = "<group>"; };
+		7C6216712814862300D05171 /* MoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaEndpoints.swift; sourceTree = "<group>"; };
+		7C6216732814868300D05171 /* DailyWeatherMoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherMoyaEndpoints.swift; sourceTree = "<group>"; };
+		7C6216752814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherMoyaEndpoints.swift; sourceTree = "<group>"; };
 		7C786A462665226E00117339 /* WeeklyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPresenter.swift; sourceTree = "<group>"; };
 		7C786A492665240200117339 /* WeeklyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherData.swift; sourceTree = "<group>"; };
 		7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C786A4D2665270200117339 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C8C4950275D22D200E32BD9 /* WeeklyWeatherViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeeklyWeatherViewController+Extensions.swift"; sourceTree = "<group>"; };
-		7C8C4952275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWeatherViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7CC6D74426277E6D001DB740 /* DailyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPresenter.swift; sourceTree = "<group>"; };
 		7CC7521626284ED400D0862C /* MoyaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaRouter.swift; sourceTree = "<group>"; };
 		7CDEC53A2624CFBB008289EF /* iWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +86,86 @@
 		7C3954DA2624D13A00D9742C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7C4532532624D71800CABB2B /* Router.swift */,
-				7CC7521626284ED400D0862C /* MoyaRouter.swift */,
+				7C6216662814829600D05171 /* Alamofire */,
+				7C6216652814829400D05171 /* Moya */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7C6216622814759A00D05171 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7CDEC53D2624CFBB008289EF /* AppDelegate.swift */,
+				7CDEC53F2624CFBB008289EF /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7C621663281475B700D05171 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7C621664281475BD00D05171 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7C6216652814829400D05171 /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				7C621668281482B400D05171 /* Endpoints */,
+				7C621667281482A000D05171 /* Base */,
+				7CC7521626284ED400D0862C /* MoyaRouter.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
+		7C6216662814829600D05171 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				7C62166C2814845F00D05171 /* Endpoints */,
+				7C621669281482D400D05171 /* Base */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		7C621667281482A000D05171 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7C6216712814862300D05171 /* MoyaEndpoints.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7C621668281482B400D05171 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				7C6216732814868300D05171 /* DailyWeatherMoyaEndpoints.swift */,
+				7C6216752814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		7C621669281482D400D05171 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7C62166A281482E200D05171 /* AlamofireEndpoint.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7C62166C2814845F00D05171 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				7C62166D2814847600D05171 /* DailyWeatherAlamofireEndpoints.swift */,
+				7C62166F2814856C00D05171 /* WeeklyWeatherAlamofireEndpoints.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		7C8C494D275D1C2B00E32BD9 /* Utilities */ = {
@@ -95,7 +179,6 @@
 		7C8C494E275D1C8C00E32BD9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7CDEC5432624CFBB008289EF /* Main.storyboard */,
 				7CDEC5482624CFBD008289EF /* LaunchScreen.storyboard */,
 				7C786A4D2665270200117339 /* WeatherCollectionViewCell.xib */,
 			);
@@ -105,6 +188,7 @@
 		7CA34223278FAA1800E67A2D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7CDEC5432624CFBB008289EF /* Main.storyboard */,
 				7CA34226278FAA2F00E67A2D /* WeeklyWeather */,
 				7CA34225278FAA2800E67A2D /* DailyWeather */,
 			);
@@ -114,6 +198,7 @@
 		7CA34225278FAA2800E67A2D /* DailyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				7C621664281475BD00D05171 /* ViewModels */,
 				7CA34228278FAA3800E67A2D /* Presenter */,
 				7CA34227278FAA3500E67A2D /* View */,
 			);
@@ -123,6 +208,7 @@
 		7CA34226278FAA2F00E67A2D /* WeeklyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				7C621663281475B700D05171 /* ViewModels */,
 				7CA3422C278FAA6B00E67A2D /* Extensions */,
 				7CA3422A278FAA4600E67A2D /* Presenter */,
 				7CA34229278FAA4300E67A2D /* View */,
@@ -167,7 +253,6 @@
 		7CA3422B278FAA6300E67A2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7C8C4952275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,12 +287,11 @@
 			isa = PBXGroup;
 			children = (
 				7C8C494D275D1C2B00E32BD9 /* Utilities */,
+				7C3954DA2624D13A00D9742C /* Services */,
 				7CA34223278FAA1800E67A2D /* Scenes */,
 				7C8C494E275D1C8C00E32BD9 /* Storyboards */,
 				7CDEC5522624D03E008289EF /* Model */,
-				7C3954DA2624D13A00D9742C /* Services */,
-				7CDEC53D2624CFBB008289EF /* AppDelegate.swift */,
-				7CDEC53F2624CFBB008289EF /* SceneDelegate.swift */,
+				7C6216622814759A00D05171 /* App */,
 				7CDEC5462624CFBD008289EF /* Assets.xcassets */,
 				7CDEC54B2624CFBD008289EF /* Info.plist */,
 			);
@@ -365,18 +449,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C62166E2814847600D05171 /* DailyWeatherAlamofireEndpoints.swift in Sources */,
 				7CDEC5422624CFBB008289EF /* DailyWeatherViewController.swift in Sources */,
 				7C786A472665226E00117339 /* WeeklyPresenter.swift in Sources */,
 				7CDEC53E2624CFBB008289EF /* AppDelegate.swift in Sources */,
+				7C6216762814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift in Sources */,
 				7CC6D74526277E6D001DB740 /* DailyPresenter.swift in Sources */,
 				7C786A4A2665240200117339 /* WeeklyWeatherData.swift in Sources */,
+				7C6216722814862300D05171 /* MoyaEndpoints.swift in Sources */,
 				7CC7521726284ED400D0862C /* MoyaRouter.swift in Sources */,
-				7C4532542624D71800CABB2B /* Router.swift in Sources */,
 				7C45325D2624DB1200CABB2B /* WeeklyWeatherViewController.swift in Sources */,
 				7CDEC5402624CFBB008289EF /* SceneDelegate.swift in Sources */,
+				7C6216742814868300D05171 /* DailyWeatherMoyaEndpoints.swift in Sources */,
+				7C62166B281482E200D05171 /* AlamofireEndpoint.swift in Sources */,
 				7C786A4E2665270200117339 /* WeatherCollectionViewCell.swift in Sources */,
+				7C6216702814856C00D05171 /* WeeklyWeatherAlamofireEndpoints.swift in Sources */,
 				7C8C4951275D22D200E32BD9 /* WeeklyWeatherViewController+Extensions.swift in Sources */,
-				7C8C4953275D231800E32BD9 /* DailyWeatherViewController+Extensions.swift in Sources */,
 				7C4532572624D8DF00CABB2B /* WeatherData.swift in Sources */,
 				7C3954DC2624D14600D9742C /* Constants.swift in Sources */,
 			);

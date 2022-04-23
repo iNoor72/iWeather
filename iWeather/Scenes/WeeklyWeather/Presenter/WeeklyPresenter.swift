@@ -15,8 +15,6 @@ protocol WeeklyWeatherPresenterDelegate {
     func presentWeather()
 }
 
-//typealias WeeklyPresenterDelegate = UIViewController & WeeklyWeatherPresenterDelegate
-
 
 
 class WeeklyPresenter: WeeklyWeatherPresenterDelegate {
