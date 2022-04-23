@@ -9,39 +9,37 @@ import UIKit
 import Alamofire
 import CoreLocation
 
-protocol DailyViewDataProtocol: AnyObject {
-    var weatherData: WeatherData? {get set}
-    func presentDailyWeather()
-}
-
-class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
+class DailyWeatherViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var degreeLabel: UILabel!
     
-    var dailyPresenter : DailyWeatherPresenterDelegate?
     var cityName: String? = "Cairo"
     let locationManager = CLLocationManager()
-    var weatherData: WeatherData?
+    
+    lazy var dailyViewModel: DailyViewModel = {
+        //Create router for it, this is bad because View knows about Service data.
+       DailyViewModel(service: DailyService(network: AlamofireNetworkManager()))
+    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocationManager()
+        dailyViewModel.fetchWeatherData()
+    }
+    
+    private func setupLocationManager() {
         locationManager.delegate = self
-        dailyPresenter = DailyWeatherPresenter(delegate: self)
-        
-        //Need to save city in UserDefaults in AppDelegate and fetch it here, becuase this is not working for now
-        dailyPresenter?.getDailyWeather(for: UserDefaults.standard.string(forKey: "CurrentWeather") ?? "Cairo")
-        
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
     }
 
     @IBAction func fetchButtonPressed(_ sender: UIButton) {
         guard let cityName = cityTextField.text else { return }
-        dailyPresenter?.getDailyWeather(for: cityName)
+        dailyViewModel.cityName = cityName
+        dailyViewModel.fetchWeatherData()
     }
     
     @objc func getMyLocation() {
@@ -51,9 +49,9 @@ class DailyWeatherViewController: UIViewController, DailyViewDataProtocol {
     //MARK: ViewProtocol Functions
     func presentDailyWeather() {
         cityTextField.text = cityName ?? "No city detected."
-        guard let image = dailyPresenter?.weatherImage(status: weatherData?.weather[0].main ?? "sun") else { return }
+        guard let image = dailyPresenter?.weatherImage(status: dailyViewModel.weatherData?.weather[0].main ?? "sun") else { return }
         weatherImage.image = UIImage(systemName: image)
-        degreeLabel.text = "\(weatherData?.main.temp ?? 0)"
+        degreeLabel.text = "\(dailyViewModel.weatherData?.temperatureData.temp ?? 0)"
     }
 }
 
@@ -67,7 +65,7 @@ extension DailyWeatherViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             print(detectedCityName.coordinate.longitude)
             print(detectedCityName.coordinate.latitude)
-            dailyPresenter?.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
+            dailyViewModel?.getDailyWeather(longitude: detectedCityName.coordinate.longitude, latitude: detectedCityName.coordinate.latitude)
         }
     }
     
