@@ -25,7 +25,7 @@ class DailyWeatherPresenter: DailyWeatherPresenterDelegate {
     
     func getDailyWeather(for city: String){
         let url = DailyWeatherAlamofireEndpoints.todayWeather(city: city)
-        AF.request(url).responseDecodable {[weak self] (response: (DataResponse<WeatherData, AFError>)) in
+        AF.request(url).responseDecodable {[weak self] (response: (DataResponse<WeatherResponse, AFError>)) in
             switch response.result {
             case .success(let data):
                 print("Data succesfully fetched. \(data)")

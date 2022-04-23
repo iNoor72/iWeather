@@ -18,7 +18,7 @@ struct WeeklyWeatherData: Codable {
 }
 
 struct WeatherElements: Codable {
-    var main: WeatherTemp
+    var main: TemperatureData
     var weather: [Info]
     
 }

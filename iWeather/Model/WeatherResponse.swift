@@ -8,16 +8,20 @@
 import Foundation
 
 
-struct WeatherData: Codable {
-    let weather: [Weather]
-    let name: String
-    let main: WeatherTemp
+struct WeatherResponse: Codable {
+    var weather: [WeatherData]
+    var name: String
+    var temperatureData: TemperatureData
     
+    enum CodingKeys: String, CodingKey {
+        case weather, name
+        case temperatureData = "main"
+    }
 }
 
-struct Weather: Codable {
-    let id: Int
-    let main, weatherDescription, icon: String
+struct WeatherData: Codable {
+    var id: Int
+    var main, weatherDescription, icon: String
     
     enum CodingKeys: String, CodingKey {
         case id, main
@@ -26,9 +30,9 @@ struct Weather: Codable {
     }
 }
 
-struct WeatherTemp: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity: Int
+struct TemperatureData: Codable {
+    var temp, feelsLike, tempMin, tempMax: Double
+    var pressure, humidity: Int
 
     enum CodingKeys: String, CodingKey {
         case temp
