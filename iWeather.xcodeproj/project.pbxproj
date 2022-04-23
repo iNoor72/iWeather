@@ -16,6 +16,8 @@
 		7C6216722814862300D05171 /* MoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216712814862300D05171 /* MoyaEndpoints.swift */; };
 		7C6216742814868300D05171 /* DailyWeatherMoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216732814868300D05171 /* DailyWeatherMoyaEndpoints.swift */; };
 		7C6216762814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216752814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift */; };
+		7C6216782814942D00D05171 /* WeeklyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216772814942D00D05171 /* WeeklyViewModel.swift */; };
+		7C62167A2814943B00D05171 /* DailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6216792814943B00D05171 /* DailyViewModel.swift */; };
 		7C786A472665226E00117339 /* WeeklyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A462665226E00117339 /* WeeklyPresenter.swift */; };
 		7C786A4A2665240200117339 /* WeeklyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A492665240200117339 /* WeeklyWeatherData.swift */; };
 		7C786A4E2665270200117339 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */; };
@@ -42,6 +44,8 @@
 		7C6216712814862300D05171 /* MoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaEndpoints.swift; sourceTree = "<group>"; };
 		7C6216732814868300D05171 /* DailyWeatherMoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherMoyaEndpoints.swift; sourceTree = "<group>"; };
 		7C6216752814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherMoyaEndpoints.swift; sourceTree = "<group>"; };
+		7C6216772814942D00D05171 /* WeeklyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewModel.swift; sourceTree = "<group>"; };
+		7C6216792814943B00D05171 /* DailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewModel.swift; sourceTree = "<group>"; };
 		7C786A462665226E00117339 /* WeeklyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPresenter.swift; sourceTree = "<group>"; };
 		7C786A492665240200117339 /* WeeklyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherData.swift; sourceTree = "<group>"; };
 		7C786A4C2665270200117339 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		7C621663281475B700D05171 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7C6216772814942D00D05171 /* WeeklyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 		7C621664281475BD00D05171 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7C6216792814943B00D05171 /* DailyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -453,7 +459,9 @@
 				7CDEC5422624CFBB008289EF /* DailyWeatherViewController.swift in Sources */,
 				7C786A472665226E00117339 /* WeeklyPresenter.swift in Sources */,
 				7CDEC53E2624CFBB008289EF /* AppDelegate.swift in Sources */,
+				7C6216782814942D00D05171 /* WeeklyViewModel.swift in Sources */,
 				7C6216762814868B00D05171 /* WeeklyWeatherMoyaEndpoints.swift in Sources */,
+				7C62167A2814943B00D05171 /* DailyViewModel.swift in Sources */,
 				7CC6D74526277E6D001DB740 /* DailyPresenter.swift in Sources */,
 				7C786A4A2665240200117339 /* WeeklyWeatherData.swift in Sources */,
 				7C6216722814862300D05171 /* MoyaEndpoints.swift in Sources */,
