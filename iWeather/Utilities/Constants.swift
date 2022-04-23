@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct Constants {
-    static let API_Key = "b4a9b59df64173b1e6f6905e378768ef"
+    static let API_Key = "YOUR-API-KEY-HERE"
     static let weatherCellID = "weatherCell"
     static let baseURL = "https://api.openweathermap.org/data/2.5"
 }
